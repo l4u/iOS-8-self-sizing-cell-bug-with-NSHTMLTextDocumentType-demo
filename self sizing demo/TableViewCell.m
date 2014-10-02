@@ -21,6 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.titleLabel = [UILabel new];
+        [self.titleLabel setNumberOfLines:0];
         [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
         [self.contentView addSubview:self.titleLabel];
@@ -30,7 +31,7 @@
 }
 
 - (void)updateConstraints {
-    UIView *superview = self;
+    UIView *superview = self.contentView;
     UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
 
     if (!self.didSetupConstraints) {
