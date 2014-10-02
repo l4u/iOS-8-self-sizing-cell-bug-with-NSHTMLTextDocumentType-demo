@@ -14,6 +14,7 @@
 		B37785BA19DE141C000E8960 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37785B919DE141C000E8960 /* Images.xcassets */; };
 		B37785BD19DE141C000E8960 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37785BB19DE141C000E8960 /* LaunchScreen.xib */; };
 		B37785C919DE141C000E8960 /* self_sizing_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B37785C819DE141C000E8960 /* self_sizing_demoTests.m */; };
+		B37785D419DE14B5000E8960 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B37785D319DE14B5000E8960 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		B37785C219DE141C000E8960 /* self sizing demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "self sizing demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37785C719DE141C000E8960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B37785C819DE141C000E8960 /* self_sizing_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = self_sizing_demoTests.m; sourceTree = "<group>"; };
+		B37785D219DE14B5000E8960 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		B37785D319DE14B5000E8960 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				B37785B019DE141C000E8960 /* AppDelegate.h */,
 				B37785B119DE141C000E8960 /* AppDelegate.m */,
 				B37785B319DE141C000E8960 /* ViewController.h */,
+				B37785D219DE14B5000E8960 /* TableViewCell.h */,
+				B37785D319DE14B5000E8960 /* TableViewCell.m */,
 				B37785B419DE141C000E8960 /* ViewController.m */,
 				B37785B619DE141C000E8960 /* Main.storyboard */,
 				B37785B919DE141C000E8960 /* Images.xcassets */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B37785B519DE141C000E8960 /* ViewController.m in Sources */,
+				B37785D419DE14B5000E8960 /* TableViewCell.m in Sources */,
 				B37785B219DE141C000E8960 /* AppDelegate.m in Sources */,
 				B37785AF19DE141C000E8960 /* main.m in Sources */,
 			);
@@ -414,6 +420,7 @@
 				B37785CE19DE141C000E8960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B37785CF19DE141C000E8960 /* Build configuration list for PBXNativeTarget "self sizing demoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				B37785D119DE141C000E8960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
