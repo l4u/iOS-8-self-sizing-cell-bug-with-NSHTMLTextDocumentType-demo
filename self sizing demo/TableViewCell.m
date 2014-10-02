@@ -20,7 +20,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        [self setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.4]];
         self.titleLabel = [UILabel new];
+        [self.titleLabel setBackgroundColor:[UIColor clearColor]];
         [self.titleLabel setNumberOfLines:0];
         [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
