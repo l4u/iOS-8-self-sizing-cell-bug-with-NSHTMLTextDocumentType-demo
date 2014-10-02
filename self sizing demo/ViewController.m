@@ -22,7 +22,7 @@
         self.longOrShort[i] = @(NO);
     }
 
-    self.tableView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.4];
+    self.tableView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.2];
     [self.tableView registerClass:TableViewCell.class forCellReuseIdentifier:@"CellReuse"];
 
     self.tableView.rowHeight = UITableViewAutomaticDimension;
