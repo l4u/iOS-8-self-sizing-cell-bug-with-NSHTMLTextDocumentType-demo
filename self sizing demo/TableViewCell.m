@@ -16,11 +16,17 @@
 
 @implementation TableViewCell
 
+- (CGFloat)randomZeroToOne
+{
+    double upper_bound = 256.0;
+    return arc4random_uniform(upper_bound)/upper_bound;
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.4]];
+        [self setBackgroundColor:[UIColor colorWithRed:self.randomZeroToOne green:self.randomZeroToOne blue:self.randomZeroToOne alpha:0.4]];
         self.titleLabel = [UILabel new];
         [self.titleLabel setBackgroundColor:[UIColor clearColor]];
         [self.titleLabel setNumberOfLines:0];
