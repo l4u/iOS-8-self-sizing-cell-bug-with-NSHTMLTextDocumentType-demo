@@ -17,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.longOrShort = [NSMutableArray new];
+    for (NSUInteger i = 0; i < 20; i++) {
+        self.longOrShort[i] = @(NO);
+    }
+
     self.tableView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.4];
 
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -41,7 +46,13 @@
         cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-    ((TableViewCell *)cell).titleLabel.text = [self randomStringWithLength:arc4random_uniform(200)];
+    self.longOrShort[indexPath.row] = @(!(((NSNumber*)self.longOrShort[indexPath.row]).boolValue));
+
+    if (((NSNumber*)self.longOrShort[indexPath.row]).boolValue) {
+        ((TableViewCell *) cell).titleLabel.text = [self randomStringWithLength:10];
+    } else {
+        ((TableViewCell *) cell).titleLabel.text = [self randomStringWithLength:200];
+    }
 
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];

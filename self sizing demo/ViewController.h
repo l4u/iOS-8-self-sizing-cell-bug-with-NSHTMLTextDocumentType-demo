@@ -10,6 +10,8 @@
 
 @interface ViewController : UITableViewController
 
+@property(nonatomic, strong) NSMutableArray* longOrShort;
+
 
 @end
 
