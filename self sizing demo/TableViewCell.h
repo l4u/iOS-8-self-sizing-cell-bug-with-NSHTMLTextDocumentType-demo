@@ -10,4 +10,6 @@
 
 @interface TableViewCell : UITableViewCell
 
+@property(nonatomic, strong) UILabel* titleLabel;
+
 @end
