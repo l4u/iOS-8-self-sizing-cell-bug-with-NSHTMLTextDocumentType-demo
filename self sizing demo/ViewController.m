@@ -17,9 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.longOrShort = [NSMutableArray new];
+    self.items = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < 20; i++) {
-        self.longOrShort[i] = @(NO);
+        self.items[i] = [self randomStringWithLength:200];
     }
 
     self.tableView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.2];
@@ -45,14 +45,8 @@
     if (!cell) {
         cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellReuse"];
     }
+    ((TableViewCell *) cell).titleLabel.text = self.items[indexPath.row];
 
-    self.longOrShort[indexPath.row] = @(!(((NSNumber*)self.longOrShort[indexPath.row]).boolValue));
-
-    if (((NSNumber*)self.longOrShort[indexPath.row]).boolValue) {
-        ((TableViewCell *) cell).titleLabel.text = [self randomStringWithLength:10];
-    } else {
-        ((TableViewCell *) cell).titleLabel.text = [self randomStringWithLength:200];
-    }
 
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
@@ -61,6 +55,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (((NSString*)self.items[indexPath.row]).length == 200) {
+        self.items[indexPath.row] = [self randomStringWithLength:10];
+    } else {
+        self.items[indexPath.row] = [self randomStringWithLength:200];
+    }
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
