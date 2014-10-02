@@ -23,6 +23,7 @@
     }
 
     self.tableView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.4];
+    [self.tableView registerClass:TableViewCell.class forCellReuseIdentifier:@"CellReuse"];
 
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 44.0; // set this to whatever your "average" cell height is; it doesn't need to be very accurate
@@ -39,11 +40,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *CellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellReuse" forIndexPath:indexPath];
 
     if (!cell) {
-        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellReuse"];
     }
 
     self.longOrShort[indexPath.row] = @(!(((NSNumber*)self.longOrShort[indexPath.row]).boolValue));
