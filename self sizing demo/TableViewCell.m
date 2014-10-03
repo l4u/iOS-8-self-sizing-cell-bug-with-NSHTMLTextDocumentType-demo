@@ -26,7 +26,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.clipsToBounds = YES;
         [self setBackgroundColor:[UIColor colorWithRed:self.randomZeroToOne green:self.randomZeroToOne blue:self.randomZeroToOne alpha:0.2]];
+        [self.contentView setBackgroundColor:[UIColor colorWithRed:self.randomZeroToOne green:self.randomZeroToOne blue:self.randomZeroToOne alpha:0.2]];
         self.titleLabel = [UILabel new];
         [self.titleLabel setBackgroundColor:[UIColor clearColor]];
         [self.titleLabel setNumberOfLines:0];

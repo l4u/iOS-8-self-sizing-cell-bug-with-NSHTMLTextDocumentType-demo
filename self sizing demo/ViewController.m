@@ -21,8 +21,6 @@
     for (NSUInteger i = 0; i < 20; i++) {
         self.items[i] = [self randomStringWithLength:200];
     }
-
-    self.tableView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.2];
     [self.tableView registerClass:TableViewCell.class forCellReuseIdentifier:@"CellReuse"];
 
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -42,11 +40,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellReuse" forIndexPath:indexPath];
 
-    if (!cell) {
-        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellReuse"];
-    }
-    ((TableViewCell *) cell).titleLabel.text = self.items[indexPath.row];
-
+    NSString* text = self.items[indexPath.row];
+    NSDictionary *options = @{
+            NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType,
+    };
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithData:[text dataUsingEncoding:NSUTF8StringEncoding] options:options documentAttributes:nil error:nil];
+    ((TableViewCell *)cell).titleLabel.attributedText = attrString;
 
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
